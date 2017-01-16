@@ -2,6 +2,7 @@
 This teamview page was created <%= time_ago_in_words(@team.created_at) %> ago and updated <%= time_ago_in_words(@team.updated_at)%> ago.
 
 <br><br><br>
+Status: <%= @team.andon %><br><br>
 Vision: <%= @team.vision %><br><br>
 Mission: <%= @team.mission %><br>
 Charter: <%= @team.charter %><br>
@@ -14,4 +15,4 @@ Jira Project Key: <%= @team.jira_project_key %><br>
 Email: <%= @team.email %><br>
 Slack Channel: <%= @team.slack_channel %><br>
 
-<%= link_to "Edit team details", edit_team_path %> | <%= link_to "Delete team details", @team, method: :delete %>
+<%= link_to "Update team details", edit_team_path %> | <%= link_to "Delete team details", @team, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you absolutely sure you want to delete this team?' } %>

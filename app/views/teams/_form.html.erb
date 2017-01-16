@@ -1,0 +1,81 @@
+<%= form_for team do |f| %>
+  <% if team.errors.any? %>
+    <div class="alert alert-danger">
+      <h4><%= pluralize(team.errors.count, "error") %>.</h4>
+      <ul>
+        <% team.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= form_group_tag(team.errors[:name]) do %>
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control', placeholder: "Enter team name" %>
+    <% end %>
+
+    <%= form_group_tag(team.errors[:andon]) do %>
+         <%= f.label :status %>
+         <%= f.text_area :andon, class: 'form-control', placeholder: "Enter status of green, yellow or red" %>
+    <% end %>
+
+    <%= form_group_tag(team.errors[:members]) do %>
+          <%= f.label :members %>
+          <%= f.text_area :members, rows: 8, class: 'form-control', placeholder: "Enter members here - first & last separated by a comma" %>
+    <% end %>
+
+    <%= form_group_tag(team.errors[:charter]) do %>
+          <%= f.label :charter %>
+          <%= f.text_area :charter, rows: 10, class: 'form-control', placeholder: "Enter team charter" %>
+    <% end %>
+
+    <%= form_group_tag(team.errors[:vision]) do %>
+          <%= f.label :vision %>
+          <%= f.text_area :vision, rows: 4, class: 'form-control', placeholder: "Enter team vision" %>
+    <% end %>
+
+    <%= form_group_tag(team.errors[:mission]) do %>
+          <%= f.label :mission %>
+          <%= f.text_area :mission, rows: 6, class: 'form-control', placeholder: "Enter team mission" %>
+    <% end %>
+
+    <%= form_group_tag(team.errors[:mission_tests]) do %>
+          <%= f.label :mission_tests %>
+          <%= f.text_area :mission_tests, rows: 6, class: 'form-control', placeholder: "Enter mission tests" %>
+    <% end %>
+
+    <%= form_group_tag(team.errors[:success_criteria]) do %>
+          <%= f.label :success_criteria %>
+          <%= f.text_area :success_criteria, rows: 6, class: 'form-control', placeholder: "Enter success_criteria" %>
+    <% end %>
+
+    <%= form_group_tag(team.errors[:responsiblities]) do %>
+          <%= f.label :responsibilities %>
+          <%= f.text_area :responsibilities, rows: 6, class: 'form-control', placeholder: "Enter responsibilities" %>
+    <% end %>
+
+    <%= form_group_tag(team.errors[:accounting_code]) do %>
+          <%= f.label :accounting_code %>
+          <%= f.text_area :accounting_code, class: 'form-control', placeholder: "Enter accounting_code" %>
+    <% end %>
+
+    <%= form_group_tag(team.errors[:jira_project_key]) do %>
+          <%= f.label :jira_project_key %>
+          <%= f.text_area :jira_project_key, class: 'form-control', placeholder: "Enter jira project key" %>
+    <% end %>
+
+    <%= form_group_tag(team.errors[:email]) do %>
+          <%= f.label :email %>
+          <%= f.text_area :email, class: 'form-control', placeholder: "Enter team email" %>
+    <% end %>
+
+    <%= form_group_tag(team.errors[:slack_channel]) do %>
+          <%= f.label :slack_channel %>
+          <%= f.text_area :slack_channel, class: 'form-control', placeholder: "Enter slack channel" %>
+    <% end %>
+
+   <div class="form-group">
+     <%= f.submit "Save", class: 'btn btn-success' %>
+   </div>
+ <% end %>

@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170116172612) do
+ActiveRecord::Schema.define(version: 20170116221646) do
 
   create_table "teams", force: :cascade do |t|
     t.string   "name",             limit: 255
-    t.integer  "andon",            limit: 4
+    t.integer  "andon",            limit: 4,     default: 0
     t.text     "members",          limit: 65535
     t.text     "charter",          limit: 65535
     t.text     "vision",           limit: 65535
@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 20170116172612) do
     t.string   "jira_project_key", limit: 255
     t.string   "email",            limit: 255
     t.string   "slack_channel",    limit: 255
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
   end
 
   create_table "users", force: :cascade do |t|

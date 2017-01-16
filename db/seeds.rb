@@ -22,7 +22,7 @@ testuser = User.create!(
    teamname = Faker::Team.name
    team = Team.create!(
      name: teamname,
-     andon: 1,
+     andon: 0,
      members: "first last, first last, first last, first last, first last, first last",
      charter: Faker::Lorem.paragraph,
      vision: Faker::Lorem.paragraph,
