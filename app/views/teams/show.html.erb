@@ -1,0 +1,17 @@
+<h1>Welcome to the <%= @team.name %> team page</h1>
+This teamview page was created <%= time_ago_in_words(@team.created_at) %> ago and updated <%= time_ago_in_words(@team.updated_at)%> ago.
+
+<br><br><br>
+Vision: <%= @team.vision %><br><br>
+Mission: <%= @team.mission %><br>
+Charter: <%= @team.charter %><br>
+Team Members: <%= @team.members %><br>
+Mission Tests: <%= @team.mission_tests %><br>
+Success Criteria: <%= @team.success_criteria %><br>
+Responsibilities: <%= @team.responsibilities %><br>
+Accounting Code: <%= @team.accounting_code %><br>
+Jira Project Key: <%= @team.jira_project_key %><br>
+Email: <%= @team.email %><br>
+Slack Channel: <%= @team.slack_channel %><br>
+
+<%= link_to "Edit team details", edit_team_path %> | <%= link_to "Delete team details", @team, method: :delete %>
