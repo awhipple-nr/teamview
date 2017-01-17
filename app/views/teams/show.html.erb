@@ -1,18 +1,30 @@
-<h1>Welcome to the <%= @team.name %> team page</h1>
-This teamview page was created <%= time_ago_in_words(@team.created_at) %> ago and updated <%= time_ago_in_words(@team.updated_at)%> ago.
-
-<br><br><br>
-Status: <%= @team.andon %><br><br>
-Vision: <%= @team.vision %><br><br>
-Mission: <%= @team.mission %><br>
-Charter: <%= @team.charter %><br>
-Team Members: <%= @team.members %><br>
-Mission Tests: <%= @team.mission_tests %><br>
-Success Criteria: <%= @team.success_criteria %><br>
-Responsibilities: <%= @team.responsibilities %><br>
-Accounting Code: <%= @team.accounting_code %><br>
-Jira Project Key: <%= @team.jira_project_key %><br>
-Email: <%= @team.email %><br>
-Slack Channel: <%= @team.slack_channel %><br>
-
-<%= link_to "Update team details", edit_team_path %> | <%= link_to "Delete team details", @team, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you absolutely sure you want to delete this team?' } %>
+<div class="container">
+  <div class="row">
+      <div class="col-sm-5"><b>Team Email:</b> <%= @team.email %></div>
+      <div class="col-sm-7"><b>Team Slack Channel:</b> <%= @team.slack_channel %></div>
+  </div>
+<h2>Welcome to the <%= @team.name %> team page</h2>
+  <div class="top-buffer">
+    This teamview page was created <%= time_ago_in_words(@team.created_at) %> ago and updated <%= time_ago_in_words(@team.updated_at)%> ago.
+    <br>Everything here is specific to <i>this</i> team.
+  </div>
+  <div class="row top-buffer">
+    <div class="col-sm-4"><b>TeamView Status:</b> <%= @team.andon %></div>
+    <div class="col-sm-4"><b>Jira Project Key:</b> <%= @team.accounting_code %></div>
+    <div class="col-sm-4"><b>Accounting Code:</b> <%= @team.accounting_code %></div>
+  </div>
+  <div class="top-buffer"><b>Members:</b><br> <%= @team.members %></div>
+  <div class="top-buffer"><b>Charter:</b><br> <%= @team.charter %></div>
+  <div class="top-buffer"><b>Responsibilities:</b><br> <%= @team.responsibilities %></div>
+  <div class="top-buffer"><b>Vision:</b><br> <%= @team.vision %></div>
+  <div class="top-buffer"><b>Mission:</b><br> <%= @team.mission %></div>
+  <div class="top-buffer"><b>Mission Tests:</b><br><%= @team.mission_tests %></div>
+  <div class="top-buffer"><b>Success Criteria:</b><br><%= @team.success_criteria %></div>
+  <div class="top-buffer">
+    <div class="col-sm-2"><%= link_to team_path, class: "btn btn-large, btn-info" do %>
+      <i class="glyphicon glyphicon-arrow-left"></i> Back <% end %></div>
+    <div class="col-sm-3"><%= link_to edit_team_path, class: "btn btn-large, btn-primary" do %>
+      <i class="glyphicon glyphicon-edit"></i> Edit Team Info<% end %></div>
+    <div class="col-sm-7"><%= link_to @team, method: :delete, data: { confirm: 'Are you absolutely sure you want to delete this team?' }, class: "btn btn-danger" do %>
+      <i class="glyphicon glyphicon-trash"></i> Delete Team Page<% end %></div>
+</div>

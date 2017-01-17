@@ -27,6 +27,7 @@ testuser = User.create!(
      charter: Faker::Lorem.paragraph,
      vision: Faker::Lorem.paragraph,
      mission: Faker::Lorem.paragraph,
+     responsibilities: Faker::Lorem.paragraph,
      mission_tests: Faker::Hacker.say_something_smart,
      success_criteria: Faker::Hacker.verb,
      accounting_code: Faker::Number.number(3),

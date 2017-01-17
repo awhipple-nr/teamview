@@ -1,8 +1,28 @@
-<h1>New Relic Team View</h1>
 
-<% @teams.each do |team| %>
-  <%= team.andon %> <%= team.name %>
-  <%= link_to "view/update", team %><br>
-  <% end %>
+  <h1><center>New Relic TeamView</center></h1>
+  <div class="container">
+    <div class="top-buffer">
 
-  <%= button_to "New", new_team_path %>
+      <table class="table">
+      <tr>
+        <th>Status</th>
+        <th>Team Name</th>
+        <th>View Details</th>
+       </tr>
+        <% @teams.each do |team| %>
+          <tr>
+            <td><%= team.andon %></td>
+            <td><%= team.name %></td>
+            <td><%= link_to team, class: "team_link" do %>
+                <span class="glyphicon glyphicon-play"></span>
+                <% end %></td>
+          </tr>
+        <% end %>
+    </table>
+    <div class="row">
+        <%= link_to new_team_path, class: "btn btn-large, btn-primary" do %>
+          <i class="glyphicon glyphicon-plus"></i> Add New Team
+        <% end %>
+    </div>
+  </div>
+</div>
