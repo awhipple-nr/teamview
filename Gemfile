@@ -15,11 +15,9 @@ source 'https://rubygems.org'
  gem 'autoprefixer-rails'
  gem 'figaro'
  gem 'pry'
- gem 'devise'
- gem 'valid_url'
- gem 'chartkick'
- gem 'groupdate'
  gem 'mysql2', '>= 0.3.13', '< 0.5'
+ gem 'active_model_serializers'
+ gem 'responders', '~> 2.0'
 
  group :development, :test do
    gem 'byebug'
