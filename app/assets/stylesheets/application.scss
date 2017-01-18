@@ -12,7 +12,34 @@
  *
  *= require_tree .
  *= require_self
+ *= require rails_bootstrap_forms
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
  .top-buffer { margin-top:20px; }
+
+ .andon0 {
+   font-style: oblique;
+   background-color: green;
+   color: white
+ }
+
+ .andon1 {
+   font-style: oblique;
+   background-color: yellow;
+   color: black
+ }
+
+ .andon2 {
+   font-style: oblique;
+   background-color: red;
+   color: white
+ }
+
+ .andon_badge {
+  width: 75px;
+	height: 25px;
+	background: andon_color;
+
+
+}

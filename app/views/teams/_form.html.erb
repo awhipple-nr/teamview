@@ -1,81 +1,28 @@
-<%= form_for team do |f| %>
-  <% if team.errors.any? %>
-    <div class="alert alert-danger">
-      <h4><%= pluralize(team.errors.count, "error") %>.</h4>
-      <ul>
-        <% team.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
+<%= bootstrap_form_for(team) do |f| %>
+  <%= f.text_field :name, label: { text: "Team Name  (required)   " }%><br>
+  <%= f.text_field :email, help: "Enter team's email address if you have one"%><br>
+  <%= f.text_field :slack_channel, help: "How can other's find you in Slack?"%><br>
+  <%= f.text_area :members, help: "Enter team member names separated by a comma e.g. Alan Turing, Ada Lovelace, Steve Wozniak."%><br>
+  <%= f.text_area :mission, help: "Why do you exist?  What are your goals and objectives?"%><br>
+  <%= f.text_area :vision, help: "What do you want to become?"%><br>
+  <%= f.text_area :charter, help: "With whom and how do you operate?  What is your information flow?  What are your principles?"%><br>
+  <%= f.text_area :mission_tests, help: "List mission tests"%><br>
+  <%= f.text_area :success_criteria, help: "How will you know you've been successful?"%><br>
+  <%= f.text_area :responsibilities, help: "What are your team's specific responsibilities (hint: they should line-up with your mission)"%><br>
+  <%= f.text_field :accounting_code, help: "Accounting code used to track expenses"%><br>
+  <%= f.text_field :jira_project_key %><br>
+  <%= f.form_group :andon, label: { text: "Status  (required)   " } do %><br>
+    <div class="btn andon0"><%= f.radio_button :andon, "green", label: "Green", inline: true %></div>
+    <div class="btn andon1"><%= f.radio_button :andon, "yellow", label: "Yellow", inline: true %></div>
+    <div class="btn andon2"><%= f.radio_button :andon, "red", label: "Red", inline: true %></div>
   <% end %>
 
-    <%= form_group_tag(team.errors[:name]) do %>
-          <%= f.label :name %>
-          <%= f.text_field :name, class: 'form-control', placeholder: "Enter team name" %>
-    <% end %>
+  <div class="row top-buffer">
+    <div class="col-sm-8">
+      <%= link_to root_path, class: "btn btn-large, btn-info" do %><i class="glyphicon glyphicon-arrow-left"></i> Don't Save <% end %>
+      <%= button_tag( :class => "btn btn-large, btn-success pull-right") do %><i class="glyphicon glyphicon-ok"></i>   Save   <% end %>
+    </div>
+  </div>
 
-    <%= form_group_tag(team.errors[:andon]) do %>
-         <%= f.label :status %>
-         <%= f.text_area :andon, class: 'form-control', placeholder: "Enter status of green, yellow or red" %>
-    <% end %>
-
-    <%= form_group_tag(team.errors[:members]) do %>
-          <%= f.label :members %>
-          <%= f.text_area :members, rows: 8, class: 'form-control', placeholder: "Enter members here - first & last separated by a comma" %>
-    <% end %>
-
-    <%= form_group_tag(team.errors[:charter]) do %>
-          <%= f.label :charter %>
-          <%= f.text_area :charter, rows: 10, class: 'form-control', placeholder: "Enter team charter" %>
-    <% end %>
-
-    <%= form_group_tag(team.errors[:vision]) do %>
-          <%= f.label :vision %>
-          <%= f.text_area :vision, rows: 4, class: 'form-control', placeholder: "Enter team vision" %>
-    <% end %>
-
-    <%= form_group_tag(team.errors[:mission]) do %>
-          <%= f.label :mission %>
-          <%= f.text_area :mission, rows: 6, class: 'form-control', placeholder: "Enter team mission" %>
-    <% end %>
-
-    <%= form_group_tag(team.errors[:mission_tests]) do %>
-          <%= f.label :mission_tests %>
-          <%= f.text_area :mission_tests, rows: 6, class: 'form-control', placeholder: "Enter mission tests" %>
-    <% end %>
-
-    <%= form_group_tag(team.errors[:success_criteria]) do %>
-          <%= f.label :success_criteria %>
-          <%= f.text_area :success_criteria, rows: 6, class: 'form-control', placeholder: "Enter success_criteria" %>
-    <% end %>
-
-    <%= form_group_tag(team.errors[:responsiblities]) do %>
-          <%= f.label :responsibilities %>
-          <%= f.text_area :responsibilities, rows: 6, class: 'form-control', placeholder: "Enter responsibilities" %>
-    <% end %>
-
-    <%= form_group_tag(team.errors[:accounting_code]) do %>
-          <%= f.label :accounting_code %>
-          <%= f.text_area :accounting_code, class: 'form-control', placeholder: "Enter accounting_code" %>
-    <% end %>
-
-    <%= form_group_tag(team.errors[:jira_project_key]) do %>
-          <%= f.label :jira_project_key %>
-          <%= f.text_area :jira_project_key, class: 'form-control', placeholder: "Enter jira project key" %>
-    <% end %>
-
-    <%= form_group_tag(team.errors[:email]) do %>
-          <%= f.label :email %>
-          <%= f.text_area :email, class: 'form-control', placeholder: "Enter team email" %>
-    <% end %>
-
-    <%= form_group_tag(team.errors[:slack_channel]) do %>
-          <%= f.label :slack_channel %>
-          <%= f.text_area :slack_channel, class: 'form-control', placeholder: "Enter slack channel" %>
-    <% end %>
-
-   <div class="form-group">
-     <%= f.submit "Save", class: 'btn btn-success' %>
-   </div>
- <% end %>
+<% end %>
+<br>
