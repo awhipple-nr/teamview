@@ -20,26 +20,39 @@
 
  .andon0 {
    font-style: oblique;
-   background-color: green;
+   background-color: #5cb85c;
    color: white
  }
 
  .andon1 {
    font-style: oblique;
-   background-color: yellow;
+   background-color: #f0ad4e;
    color: black
  }
 
  .andon2 {
    font-style: oblique;
-   background-color: red;
+   background-color: #d9534f;
    color: white
  }
 
- .andon_badge {
-  width: 75px;
-	height: 25px;
-	background: andon_color;
+ .navbar-brand {
+  display: flex;
+  align-items: center;
+}
 
+.navbar-brand>img {
+  padding: 7px 14px;
 
+}
+.navbar-brand {
+  height: 80px;
+}
+.nav >li >a {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+label.required:after {
+  content:" *";
+  color: red
 }

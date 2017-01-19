@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'welcome/about'
+  get '/about', to: 'welcome#about'
   root to: 'welcome#index'
   resources :teams
 

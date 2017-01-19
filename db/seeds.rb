@@ -19,7 +19,7 @@ testuser = User.create!(
  users = User.all
 
  10.times do
-   teamname = Faker::Team.name
+   teamname = Faker::Superhero.power
    team = Team.create!(
      name: teamname,
      andon: 0,
@@ -32,7 +32,7 @@ testuser = User.create!(
      success_criteria: Faker::Hacker.verb,
      accounting_code: Faker::Number.number(3),
      jira_project_key: Faker::Number.number(4),
-     email: teamname + "@company.com",
+     email: teamname + "@newrelic.com",
      slack_channel: teamname + " " + Faker::StarWars.specie,
      )
     team.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)

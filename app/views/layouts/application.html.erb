@@ -8,21 +8,34 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <nav class="navbar navbar-default">
+
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="/"></span>
+            <span class="/about"></span>
+          </button>
+          <a class="navbar-brand" href="http://newrelic.com"><img style="	width: 110px;" src="/assets/NewRelic-logo-square.png">
+        </a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+  </nav>
 
-          <a class="navbar-brand" href="#">Logo goes here</a>
-        </div>
-          <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-              <li class="active"><%= link_to "About", welcome_about_path %></li>
-              <li><%= link_to "Home", root_path %></li>
-           </ul>
+</div>
 
-         </div>
-       </div>
-     </nav>
+
+
+
      <div class="container">
 
        <%= yield %>

@@ -1,17 +1,19 @@
-<%= bootstrap_form_for(team) do |f| %>
-  <%= f.text_field :name, label: { text: "Team Name  (required)   " }%><br>
-  <%= f.text_field :email, help: "Enter team's email address if you have one"%><br>
-  <%= f.text_field :slack_channel, help: "How can other's find you in Slack?"%><br>
-  <%= f.text_area :members, help: "Enter team member names separated by a comma e.g. Alan Turing, Ada Lovelace, Steve Wozniak."%><br>
-  <%= f.text_area :mission, help: "Why do you exist?  What are your goals and objectives?"%><br>
-  <%= f.text_area :vision, help: "What do you want to become?"%><br>
-  <%= f.text_area :charter, help: "With whom and how do you operate?  What is your information flow?  What are your principles?"%><br>
-  <%= f.text_area :mission_tests, help: "List mission tests"%><br>
-  <%= f.text_area :success_criteria, help: "How will you know you've been successful?"%><br>
-  <%= f.text_area :responsibilities, help: "What are your team's specific responsibilities (hint: they should line-up with your mission)"%><br>
-  <%= f.text_field :accounting_code, help: "Accounting code used to track expenses"%><br>
-  <%= f.text_field :jira_project_key %><br>
-  <%= f.form_group :andon, label: { text: "Status  (required)   " } do %><br>
+<form>
+  <div class="form-group">
+  <%= bootstrap_form_for(team) do |f| %>
+  <%= f.text_field :name, label: { text: "Team Name   " }%>
+  <%= f.text_field :email, placeholder: "Enter team's email address if you have one" %>
+  <%= f.text_field :slack_channel, placeholder: "How can others find you in Slack?"%>
+  <%= f.text_area :members, help: "Enter team member names separated by a comma e.g. Alan Turing, Ada Lovelace, Steve Wozniak."%>
+  <%= f.text_area :mission, help: "Why do you exist?  What are your goals and objectives?"%>
+  <%= f.text_area :vision, help: "What do you want to become?"%>
+  <%= f.text_area :charter, help: "With whom and how do you operate?  What is your information flow?  What are your principles?"%>
+  <%= f.text_area :mission_tests, help: "List mission tests"%>
+  <%= f.text_area :success_criteria, help: "How will you know you've been successful?"%>
+  <%= f.text_area :responsibilities, help: "What are your team's specific responsibilities (hint: they should line-up with your mission)"%>
+  <%= f.text_field :accounting_code, placeholder: "Accounting code used to track expenses"%>
+  <%= f.text_field :jira_project_key, placeholder: "How can others find your work in Jira?" %>
+  <%= f.form_group :andon, label: { text: "Status    " } do %><br>
     <div class="btn andon0"><%= f.radio_button :andon, "green", label: "Green", inline: true %></div>
     <div class="btn andon1"><%= f.radio_button :andon, "yellow", label: "Yellow", inline: true %></div>
     <div class="btn andon2"><%= f.radio_button :andon, "red", label: "Red", inline: true %></div>
@@ -26,3 +28,5 @@
 
 <% end %>
 <br>
+</div>
+</form>

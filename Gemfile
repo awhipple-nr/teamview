@@ -19,13 +19,17 @@ source 'https://rubygems.org'
  gem 'mysql2', '>= 0.3.13', '< 0.5'
  gem 'active_model_serializers'
  gem 'responders', '~> 2.0'
+ gem 'email_validator'
 
  group :development, :test do
    gem 'byebug'
-   gem 'web-console', '~> 2.0'
    gem 'spring'
    gem 'rspec-rails'
    gem 'shoulda'
    gem 'faker'
    gem 'factory_girl_rails'
+ end
+
+ group :development do
+   gem 'web-console', '~> 2.0'
  end
