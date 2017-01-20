@@ -1,3 +1,5 @@
+require 'faker'
+I18n.reload!
 
  10.times do
    teamname = "teamname"
