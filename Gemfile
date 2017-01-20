@@ -32,4 +32,5 @@ source 'https://rubygems.org'
 
  group :development do
    gem 'web-console', '~> 2.0'
+   gem 'faker'
  end
