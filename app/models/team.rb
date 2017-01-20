@@ -5,7 +5,6 @@ class Team < ActiveRecord::Base
   validates :andon, presence: true
   validates :email, email: true,
             :allow_blank => true,
-            :uniqueness => { :case_sensitive => false },
             :format => { with: /[A-Za-z0-9_.-]+@newrelic\.com\z/, message: "must be a valid newrelic.com account" }
   enum andon: [:green, :yellow, :red]
 

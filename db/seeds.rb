@@ -1,25 +1,7 @@
 
-100.times do
-   User.create!(
-     email: Faker::Internet.email,
-     first_name: Faker::Name.first_name,
-     last_name: Faker::Name.last_name,
-     created_at: Faker::Date.backward(360)
-     )
- end
-
-testuser = User.create!(
-     email: "you@me.com",
-     first_name: "Test",
-     last_name: "User",
-     created_at: Faker::Date.backward(360)
-     )
-     testuser.save!
-
- users = User.all
 
  10.times do
-   teamname = Faker::Superhero.power
+   teamname = "teamname"
    team = Team.create!(
      name: teamname,
      andon: 0,
@@ -41,6 +23,4 @@ testuser = User.create!(
 
 
   puts "Seed finished"
-  puts "#{User.count} users created"
   puts "#{Team.count} teams created"
-  # puts "#{Event.count} events created"
