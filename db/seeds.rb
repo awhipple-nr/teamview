@@ -2,7 +2,7 @@ require 'faker'
 I18n.reload!
 
  10.times do
-   teamname = Faker::Superhero.power
+   teamname = Faker::Pokemon.name
    team = Team.create!(
      name: teamname,
      andon: 0,
