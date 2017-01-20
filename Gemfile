@@ -20,17 +20,16 @@ source 'https://rubygems.org'
  gem 'active_model_serializers'
  gem 'responders', '~> 2.0'
  gem 'email_validator'
+ gem 'faker'
 
  group :development, :test do
    gem 'byebug'
    gem 'spring'
    gem 'rspec-rails'
    gem 'shoulda'
-   gem 'faker'
    gem 'factory_girl_rails'
  end
 
  group :development do
    gem 'web-console', '~> 2.0'
-   gem 'faker'
  end
