@@ -1,6 +1,7 @@
 class TeamsController < ApplicationController
   def index
-    @team = Team.find(params[:id])
+    
+    @teams = Team.all
   end
 
   def show
@@ -49,15 +50,11 @@ class TeamsController < ApplicationController
         end
     end
 
-
-
-
   private
 
   def team_params
     params.require(:team).permit(:name, :andon, :members, :charter, :vision, :mission, :mission_tests,
       :success_criteria, :responsibilities, :accounting_code, :jira_project_key, :email, :slack_channel)
   end
-
 
 end
