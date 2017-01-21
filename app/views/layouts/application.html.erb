@@ -4,41 +4,33 @@
     <title>New Relic Team View</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true  %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
-
-    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbaroptions">
             <span class="sr-only">Toggle navigation</span>
-            <span class="/"></span>
-            <span class="/about"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="http://newrelic.com"><img style="	width: 110px;" src="/assets/NewRelic-logo-square.png">
-        </a>
-      </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-        </ul>
-      </div>
-      <!--/.nav-collapse -->
+            <a class="navbar-brand" href="http://newrelic.com"><img style="	width: 110px;" src="/assets/NewRelic-logo-square.png" alt="New Relic">
+            </a>
+       </div>
+       <div id="navbaroptions" class="navbar-collapse collapse">
+          <%= nav_bar do %>
+            <%= nav_link 'Home', root_path %>
+            <%= nav_link 'About', about_path %>
+          <% end %>
+       </div>
     </div>
-    <!--/.container-fluid -->
   </nav>
 
-</div>
 
-
-
-
-     <div class="container">
-
-       <%= yield %>
-    </div>
-  </body>
+  <div class="container">
+     <%= yield %>
+  </div>
+</body>
 </html>
