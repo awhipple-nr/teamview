@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
   def index
-    
     @teams = Team.all
+    render :nothing => true
   end
 
   def show
