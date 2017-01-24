@@ -21,22 +21,29 @@ rake db:create db:migrate db:seed
 ```
 
 
-###API:###
+##API:##
 
-**API Access**
+###API Access###
+
 There is currently no authentication necessary to perform standard CRUD operations.
 
-**Endpoints**
+###Endpoints###
+
 The following resources are available for index and CRUD operations:
 
-`/api/teams`
+```
+/api/teams
+/api/team/(params[:id])
+```
 
-**API Requests**
+###API Requests###
+
 Requests for the teamview API are all RESTful, with parameters following the endpoint path. Each request in the documentation is displayed with the appropriate HTTP method and sample parameters. The following request using HTTP GET requests all team objects: http://localhost:3000/api/teams?
 
 The index is sorted on team name
 
-**CRUD Requests**
+###CRUD Requests###
+
 Create, update and delete requests follow standard RESTful practices. While some fields are available on a resource, you may not be able to set values such as created_at during a CREATE, UPDATE or DELETE action. The allowed parameters are listed at the beginning of each CRUD section. 
 
 Create a new Team [POST] The following attributes are permitted when creating a Team. All other attributes will be ignored.
