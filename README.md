@@ -54,14 +54,22 @@ The index is sorted on team name
 
 ###CRUD Requests
 
+
 Create, update and delete requests follow standard RESTful practices. While some fields are available on a resource, you may not be able to set values such as created_at during a CREATE, UPDATE or DELETE action. The allowed parameters are listed at the beginning of each CRUD section.
 
 ##Create a new Team [POST]
+
+Create, update and delete requests follow standard RESTful practices. While some fields are available on a resource, you may not be able to set values such as created_at during a CREATE, UPDATE or DELETE action. The allowed parameters are listed at the beginning of each CRUD section.
+
+##Create a new Team [POST]
+
 
 **The following attributes are permitted when creating a Team.  All other attributes will be ignored.**
 
 |Field	|Type	|Required	|Notes  
 |---|---|---|---
+
+name |`string` | **Yes**
 name |`string` | **Yes**
 andon |	`integer `|**Yes**  |   limited to 0 = "green", 1 = "yellow", 2 = "red"
 members | `text ` | No	|
@@ -74,4 +82,5 @@ responsibilities | `text ` | No	|
 accounting_code | `text ` | No	|
 jira_project_key | `text ` | No	|
 email | `string ` | No	| limited to @newrelic.com domain
+slack_channel | `string ` | No	|
 slack_channel | `string ` | No	|
