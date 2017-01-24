@@ -1,6 +1,6 @@
 # TeamView
 
-TeamView is a simple, straightforward Rails application built to help track and educate on varied engineering and product-focused teams.  An API is provided for access outside the product organization.
+TeamView is a simple, straightforward Rails application built to help track and educate on diverse and fluid engineering and product-focused teams.  An API is provided for access outside the product organization.
 
 Each team page contains:
 
