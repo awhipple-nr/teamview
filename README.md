@@ -11,7 +11,7 @@ Each team page contains:
 A manually updated stoplight legend (green, yellow, red) allows fast determination of the reliability/completeness of the information for each team.
 
 
-**Using:**
+##Using:
 Rails 4.2.5
 
 MySql must be installed - edit database.yml as necessary
