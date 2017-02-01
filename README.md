@@ -16,6 +16,9 @@ Rails 4.2.5
 
 MySql must be installed - edit database.yml as necessary
 
+Basic tests use Rspec
+
+
 ##To use:##
 
 ###Local setup:
@@ -66,9 +69,8 @@ Create, update and delete requests follow standard RESTful practices. While some
 
 **The following attributes are permitted when creating a Team.  All other attributes will be ignored.**
 
-|Field	|Type	|Required	|Notes  
-|---|---|---|---
-
+|Field	|Type |Required	|Notes  
+|-------|-----|---------|------
 name |`string` | **Yes**
 name |`string` | **Yes**
 andon |	`integer `|**Yes**  |   limited to 0 = "green", 1 = "yellow", 2 = "red"
