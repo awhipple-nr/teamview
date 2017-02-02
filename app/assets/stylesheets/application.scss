@@ -62,3 +62,7 @@ label.required:after {
   font-size: 24;
   ;
 }
+
+textarea.form-control {
+    resize: vertical;
+}
